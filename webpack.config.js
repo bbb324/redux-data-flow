@@ -4,43 +4,43 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-  entry: './src/index.jsx',
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      filename: 'index.html'
-    })
-  ],
-  mode: 'development',
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react','@babel/preset-env']
-          }
-        }
-      },
-      {
-        test: /\.(less|css)$/,
-        use:[ 'style-loader','css-loader','less-loader'],
-      },
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        enforce: "pre",
-        include: [path.resolve(__dirname, 'src')], // Ö¸¶¨¼ì²éµÄÄ¿Â¼
-        options: { // ÕâÀïµÄÅäÖÃÏî²ÎÊý½«»á±»´«µÝµ½ eslint µÄ CLIEngine
-          formatter: require('eslint-friendly-formatter') // Ö¸¶¨´íÎó±¨¸æµÄ¸ñÊ½¹æ·¶
-        }
-      }
-    ]
-  }
+    entry: './src/index.jsx',
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js'
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: 'index.html'
+        })
+    ],
+    mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react', '@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.(less|css)$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.js$/,
+                loader: 'eslint-loader',
+                enforce: "pre",
+                include: [path.resolve(__dirname, 'src')], // Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼
+                options: { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á±»ï¿½ï¿½ï¿½Ýµï¿½ eslint ï¿½ï¿½ CLIEngine
+                    formatter: require('eslint-friendly-formatter') // Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ó±¨¸ï¿½Ä¸ï¿½Ê½ï¿½æ·¶
+                }
+            }
+        ]
+    }
 }
