@@ -1,22 +1,19 @@
-# react 脚手架
+# react redux示例
+
+#### 说明
+引入webpack4，以及react16，
+采用自定义的eslint各式
 
 #### 开始步骤
 1. npm install （当前所需node_modules）
-2、npm start
+2. npm run start
 
 #### 项目结构
--build  //npm start后webpack生成的浏览器可用js和css文件目录
+-build  //npm start后webpack生成的浏览器可用js和css文件目录，这个会ignore
 -public
   index.html //template
 -src
   -componen  //主要编辑内容，html和css
-    -editor
-      Editor.jsx.js
-      editor.less
-    -login
-      Login.jsx
-      login.less
-    base-style.less
   index.js
 .babel-loader
 .babelrc
