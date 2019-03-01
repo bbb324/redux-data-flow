@@ -35,12 +35,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'eslint-loader',
-                enforce: "pre",
-                include: [path.resolve(__dirname, 'src')], // ָ������Ŀ¼
-                options: { // �����������������ᱻ���ݵ� eslint �� CLIEngine
-                    formatter: require('eslint-friendly-formatter') // ָ�����󱨸�ĸ�ʽ�淶
+                enforce: 'pre',
+                include: [path.resolve(__dirname, 'src')],
+                options: {
+                    formatter: require('eslint-friendly-formatter')
                 }
             }
         ]
+    },
+    resolve: {
+        // you can now require('file') instead of require('file.coffee')
+        extensions: ['.js', '.json', '.jsx']
     }
-}
+};

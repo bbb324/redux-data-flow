@@ -1,7 +1,10 @@
 module.exports = {
     root: true,
     parserOptions: {
-        sourceType: 'module'
+        sourceType: 'module',
+        ecmaFeatures: {
+            "jsx": true
+        }
     },
     env: {
         browser: true,
@@ -12,5 +15,9 @@ module.exports = {
         "semi": ["error", "always"],
         "no-console": "error",
         "arrow-parens": 0
-    }
+    },
+    parser: "babel-eslint",
+    plugins: [
+        "react"
+    ],
 }

@@ -1,31 +1,19 @@
 /**
  * Created by junxie on 18/5/27.
  */
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDom from 'react-dom';
-import { HashRouter, Route, hashHistory, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers';
+import App from './component/App.jsx';
 
-import Login from './component/login/Login.jsx';     // 登录页面
-import Editor from './component/editor/Editor.jsx'; // 富文本编辑器
+const store = createStore(rootReducer);
 
-class App extends Component {
-    render() {
-        return (
-            <HashRouter history={hashHistory}>
-                <SliderComponent />
-            </HashRouter>
-        )
-    }
-}
-
-const SliderComponent = () => (
-    <Switch>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/editor" component={Editor}/>
-    </Switch>
-);
 
 ReactDom.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
