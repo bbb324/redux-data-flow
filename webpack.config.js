@@ -4,10 +4,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/index.jsx',
+    entry: {
+        pageOne: './src/todoList/index.jsx',
+        pageTwo: './src/trafficLight/index.jsx',
+    },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/bbb324/redux-data-flow#readme",
   "dependencies": {
+    "react": "16.x",
+    "react-dom": "16.x",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -42,8 +45,6 @@
     "eslint-plugin-react": "^7.12.4",
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^4.1.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3"
